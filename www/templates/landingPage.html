@@ -1,0 +1,50 @@
+<ion-view view-title="<img src='http://gibsonandassociates.ie/wp-content/uploads/2014/07/Logo-Horizontal1.jpg' style='height: 35px'>">
+
+  <ion-content style="  background-color: #F4F4F4;">
+    <a class="item item-icon-left item-icon-right searchboxDiv">
+      <i class="icon ion-ios-location-outline"></i>
+      <input type="search" class="searchbox title ralewayFont" disabled placeholder="We currently only serve in GURGAON">
+      <!-- <i class="icon ion-ios-circle-outline"></i> -->
+      <!-- <i class="icon">
+        <span class="timeEstimate">
+          30<br>mins
+        </span>
+      </i> -->
+    </a>
+
+    <br>
+    <p class="title">TODAY'S MENU</p>
+
+    <div class="list card" ng-repeat="item in data.foodFactory.foodProds">
+
+      <div class="item">
+        <h2 class="robotoFont">{{item.prodName}}</h2>
+      </div>
+
+      <div class="item item-text-wrap">
+        <h4 class="title ralewayFont">{{item.prodShortDesc}}</h4>
+      </div>
+
+      <div class="item item-image">
+        <img data-ng-src="{{item.prodImg}}">
+      </div>
+
+      <div class="item assertive item-button-right">
+        Rs.{{item.amount}}/-
+        <div class="buttons">
+            <button class="button button-clear button-large button-assertive" ng-click="changeQuantity('minus')">
+                <i class="icon ion-ios-minus-outline iconSize"></i>
+            </button>
+            <span>
+              {{item.qty}}
+            </span>
+            <button class="button button-clear button-large button-assertive" ng-click="changeQuantity('plus')">
+                <i class="icon ion-ios-plus iconSize"></i>
+            </button>
+        </div>
+      </div>
+
+    </div>
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,34 @@
+<ion-view view-title="<img src='http://gibsonandassociates.ie/wp-content/uploads/2014/07/Logo-Horizontal1.jpg' style='height: 35px'>">
+
+	<ion-content class="has-footer" style="  background-color: #F4F4F4;">
+		
+		<div class="row padding">
+		  <div class="col robotoFont"><b>Item</b></div>
+		  <div class="col robotoFont"><b>Qty</b></div>
+		  <div class="col robotoFont"><b>Final Price</b></div>
+		</div>
+
+		<hr>
+		<div ng-repeat="item in data.cart.items">
+			<div class="row padding">
+			  <div class="col ralewayFont">{{item.prodName}}</div>
+			  <div class="col ralewayFont"> <b>{{item.qty}}</b> x<br>{{item.prodAmount | currency:"Rs. " }}</div>
+			  <div class="col ralewayFont"> {{ item.qty * item.prodAmount | currency:"Rs. " }}/-</div>
+			</div>
+		</div>
+		<hr>
+
+		<h4 class="assertive robotoFont padding grandTotal">
+		  	GRAND TOTAL = {{ totalCartAmount() | currency:"Rs. " }}/-
+		</h4>
+{{sample()}}
+	</ion-content>
+
+
+	<ion-footer-bar>
+		<button class="bar bar-footer bar-positive robotoFont" ng-click="placeOrder()">
+			<span style="margin: 0 auto;">PLACE ORDER</span>
+		</button>
+	</ion-footer-bar>
+
+</ion-view>
